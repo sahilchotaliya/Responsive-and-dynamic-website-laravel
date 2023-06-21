@@ -1,0 +1,80 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Jun 21, 2023 at 06:39 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `lav`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `profile_image` varchar(255) DEFAULT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `username`, `profile_image`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'sahil', 'chotaliyasahil7890@gmail.com', '2023-05-22 00:49:32', '$2y$10$LJesTtkWCe09Z9Wh8Ppkx.linPqv.ldnJfca2as7cyAHAS71ETlGC', '', NULL, 'sb7DeBXJlWbO2cds8FJGgfhrHCfRiiq4gWhrj0AbsMaFQ39HGEFwTuZ6P5kY', '2023-05-22 00:17:23', '2023-05-22 00:49:32'),
+(2, 'chain', 'chotaliyasahil78904@gmail.com', '2023-05-22 02:05:54', '$2y$10$Fgl2kmrKgRTa1pmSzhxo9uaa.IsqFNhwZSSAfaTe3RpVOF3r50lSW', 'chain', '202305250613avatar-7.jpg', NULL, '2023-05-22 02:05:20', '2023-05-25 00:43:20'),
+(3, 'ss', 'chotaliyasahil78902@gmail.com', '2023-05-22 02:43:24', '$2y$10$T1RZvIjLCWu2hMjWmZZtSuN4uiqyqpL/XlPCUXJitP6SZmHIJMR9u', 'sahil', NULL, NULL, '2023-05-22 02:43:13', '2023-05-22 02:43:24'),
+(4, 'mitali', 'mitali@gmail.com', NULL, '$2y$10$4hJwsqGQF3omrxIZ4S4AFe6FRWv/a9jD5O7lx6zk.TxGONFHq0LeW', 'mittu', '202305221143avatar-4.jpg', NULL, '2023-05-22 05:50:16', '2023-05-22 06:13:03'),
+(5, 'sahil', 'chotaliyasahil78490@gmail.com', NULL, '$2y$10$53hiQQfdhfCfg6yR9DjymeTkUhPulNn1tslQJORvF58xK1EsD5OMC', 'sahil1', '202305230424oceanbit.jpeg', NULL, '2023-05-22 22:54:13', '2023-05-22 22:54:49'),
+(6, 'sahil', 'chotaliya@gmail.com', NULL, '$2y$10$yGlcVZ4Nsj0InxyhOfrtM.aS0ephd0.7mKxaORNgwyqTFQtt1F72C', 'sallu', NULL, NULL, '2023-06-20 22:55:22', '2023-06-20 22:55:22');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
